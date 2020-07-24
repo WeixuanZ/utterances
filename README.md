@@ -1,6 +1,8 @@
 # utterances 🔮
 
-A lightweight comments widget built on GitHub issues. Use GitHub issues for blog comments, wiki pages and more!
+This is a fork of utterances for comments on my blog - https://weixuanz.github.io, whose comments are recorded on this repository.
+
+[utterances](https://github.com/utterance/utterances) is a lightweight comments widget built on GitHub issues. Use GitHub issues for blog comments, wiki pages and more!
 
 * [Open source](https://github.com/utterance). 🙌
 * No tracking, no ads, always free. 📡🚫
@@ -16,14 +18,5 @@ When Utterances loads, the GitHub [issue search API](https://developer.github.co
 To comment, users must authorize the utterances app to post on their behalf using the GitHub [OAuth flow](https://developer.github.com/v3/oauth/#web-application-flow). Alternatively, users can comment on the GitHub issue directly.
 
 ## configuration
-
-## sites using utterances
-
-* Haxe [documentation](https://haxe.org/manual) and [cookbook](https://code.haxe.org/)
-* [danyow.net](https://danyow.net)
-* [os.phil-opp.com](https://os.phil-opp.com/second-edition)
-* **[and many more...](https://github.com/utterance/utterances/blob/master/SITES.md#sites-using-utterances)**
-
-Are you using utterances? [Add your site](https://github.com/utterance/utterances/edit/master/SITES.md) to the list!
 
 # try it out 👇👇👇
