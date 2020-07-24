@@ -171,7 +171,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.UTTERANCES_API = void 0;
-var UTTERANCES_API = 'https://api.utteranc.es';
+var UTTERANCES_API = 'https://utterances.weixuanz.workers.dev';
 exports.UTTERANCES_API = UTTERANCES_API;
 },{}],"oauth.ts":[function(require,module,exports) {
 "use strict";
@@ -1444,7 +1444,7 @@ var TimelineComponent = function () {
     this.count = 0;
     this.element = document.createElement('main');
     this.element.classList.add('timeline');
-    this.element.innerHTML = "\n      <h1 class=\"timeline-header\">\n        <a class=\"text-link\" target=\"_blank\"></a>\n        <em>\n          - powered by\n          <a class=\"text-link\" href=\"https://utteranc.es\" target=\"_blank\">utteranc.es</a>\n        </em>\n      </h1>";
+    this.element.innerHTML = "\n      <h1 class=\"timeline-header\">\n        <a class=\"text-link\" target=\"_blank\"></a>\n      </h1>";
     this.countAnchor = this.element.firstElementChild.firstElementChild;
     this.marker = document.createComment('marker');
     this.element.appendChild(this.marker);
