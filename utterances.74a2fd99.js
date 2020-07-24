@@ -449,7 +449,7 @@ function readPageAttributes() {
     title: params.title,
     description: params.description,
     label: params.label,
-    theme: params.theme || 'github-light'
+    theme: params.theme || 'light'
   };
 }
 
@@ -1921,11 +1921,11 @@ function loadTheme(theme, origin) {
     link.rel = 'stylesheet';
     link.setAttribute('crossorigin', 'anonymous');
     link.onload = resolve;
-    link.href = "/stylesheets/themes/" + theme + "/utterances.css";
+    link.href = (origin.includes('localhost') ? '' : '/utterances') + ("/stylesheets/themes/" + theme + "/utterances.css");
     document.head.appendChild(link);
     addEventListener('message', function (event) {
       if (event.origin === origin && event.data.type === 'set-theme') {
-        link.href = "/stylesheets/themes/" + event.data.theme + "/utterances.css";
+        link.href = (origin.includes('localhost') ? '' : '/utterances') + ("/stylesheets/themes/" + event.data.theme + "/utterances.css");
       }
     });
   });
