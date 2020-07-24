@@ -18,8 +18,11 @@
     flex-basis: 0;
     min-width: 0px;
     background-color: $bg-white;
-    border: $border;
     border-radius: $border-radius;
+  }
+
+  .comment:before, .comment:after {
+    display: none !important;
   }
 
   .comment-header {
@@ -27,8 +30,8 @@
     align-items: center;
     justify-content: space-between;
     color: $text-gray;
+    border-radius: $border-radius;
     background-color: $bg-gray;
-    border-bottom: $border;
   }
 
   .comment-meta {
@@ -42,9 +45,33 @@
 
   .new-comment-header {
     padding: $spacer-2 $spacer-2 0 $spacer-2;
-    background-color: $bg-gray;
-    border-bottom: $border;
+    background-color: $bg-white;
+    border-bottom: none;
+    border-radius: $border-radius;
     margin-bottom: 0;
+    padding: 10px;
+  }
+
+  .tabnav-tab {
+    padding: 0px 6px;
+    border-radius: $border-radius;
+    border: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+  }
+
+  .tabnav-tab.selected,
+  .tabnav-tab[aria-selected=true],
+  .tabnav-tab[aria-current]:not([aria-current=false]) {
+    color: #fff;
+    background-color: #2a76dd;
+    cursor: default;
+  }
+
+  .tabnav-tab:not([aria-selected]):hover,
+  .tabnav-tab[aria-selected=false]:hover {
+    background-color: #6ca0e8;
+    color: #fff;
   }
 
   .markdown-body {
