@@ -54,13 +54,14 @@ attrs.token = token;
 document.head.insertAdjacentHTML(
   'afterbegin',
   `<style>
-    .utterances {
+    #utterances {
       position: relative;
       box-sizing: border-box;
       width: 100%;
       max-width: 760px;
       margin-left: auto;
       margin-right: auto;
+      height: 250px;
     }
     .utterances-frame {
       position: absolute;
@@ -79,11 +80,9 @@ const utterancesOrigin = script.src.match(/^https:\/\/weixuanz\.github\.io|http:
 const url = `${utterancesOrigin}/utterances/utterances.html`;
 script.insertAdjacentHTML(
   'afterend',
-  `<div class="utterances">
-    <iframe class="utterances-frame" title="Comments" scrolling="no" src="${url}?${param(attrs)}"></iframe>
-  </div>`);
-const container = script.nextElementSibling as HTMLDivElement;
-script.parentElement!.removeChild(script);
+  `<iframe class="utterances-frame" title="Comments" scrolling="no" src="${url}?${param(attrs)}"></iframe>`);
+const container = script.parentElement as HTMLDivElement;
+container!.removeChild(script);
 
 // adjust the iframe's height when the height of it's content changes
 addEventListener('message', event => {

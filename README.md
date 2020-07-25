@@ -11,7 +11,7 @@ utterances is a lightweight comments widget built on GitHub issues. Use GitHub i
 * Dark theme. 🌘
 * Lightweight. Vanilla TypeScript. No font downloads, JavaScript frameworks or polyfills for evergreen browsers. 🐦🌲
 
-To serve locally, execute `yarn start`, then go to http://localhost:4000/index.html. Use `yarn run deploy` to deploy to GitHub Pages.
+To serve locally, execute `yarn start`, then go to http://localhost:4000/utterances/index.html. Use `yarn run deploy` to deploy to GitHub Pages.
 
 ## how it works
 
