@@ -162,7 +162,7 @@ export class ConfigurationComponent {
       if (theme === preferredThemeId) {
         theme = preferredTheme
       }
-      themeStylesheet.href = `/stylesheets/themes/${theme}/index.css`;
+      themeStylesheet.href = `/utterances/stylesheets/themes/${theme}/index.css`;
       const message = {
         type: 'set-theme',
         theme
