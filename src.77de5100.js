@@ -160,7 +160,7 @@ var ConfigurationComponent = function () {
         theme = _preferredTheme.preferredTheme;
       }
 
-      themeStylesheet.href = "/stylesheets/themes/" + theme + "/index.css";
+      themeStylesheet.href = "/utterances/stylesheets/themes/" + theme + "/index.css";
       var message = {
         type: 'set-theme',
         theme: theme
