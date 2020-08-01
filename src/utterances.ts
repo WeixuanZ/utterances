@@ -29,6 +29,7 @@ function loadIssue(): Promise<Issue | null> {
 }
 
 async function bootstrap() {
+  // obtain the token stored in a cookie, which is set when the GitHub App is authorised
   await loadToken();
   // tslint:disable-next-line:prefer-const
   let [issue, user] = await Promise.all([
@@ -55,7 +56,10 @@ async function bootstrap() {
   enableReactions(!!user);
 
   const submit = async (markdown: string) => {
+    // check if the origin is contained in utterances.json, and is allowed to post comments
     await assertOrigin();
+    // check if the issue already exists, if not create one by sending a request to utterances-oauth
+    // note that to create a new issue, authentication (i.e. token) is required
     if (!issue) {
       issue = await createIssue(
         page.issueTerm as string,
@@ -66,11 +70,13 @@ async function bootstrap() {
       );
       timeline.setIssue(issue);
     }
+    // directly send request to GitHub using token
     const comment = await postComment(issue.number, markdown);
-    timeline.insertComment(comment, true);
+    timeline.insertComment(comment, true);  // update timeline
     newCommentComponent.clear();
   };
 
+  // add the new comment form
   const newCommentComponent = new NewCommentComponent(user, submit);
   timeline.element.appendChild(newCommentComponent.element);
 }

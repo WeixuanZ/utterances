@@ -82,7 +82,7 @@ script.insertAdjacentHTML(
   'afterend',
   `<iframe class="utterances-frame" title="Comments" scrolling="no" src="${url}?${param(attrs)}"></iframe>`);
 const container = script.parentElement as HTMLDivElement;
-container!.removeChild(script);
+container!.removeChild(script);  // remove the original script tag
 
 // adjust the iframe's height when the height of it's content changes
 addEventListener('message', event => {
@@ -93,4 +93,4 @@ addEventListener('message', event => {
   if (data && data.type === 'resize' && data.height) {
     container.style.height = `${data.height}px`;
   }
-});
+});  // note that this is triggered when the iframe is loaded, can be used to trigger set initial theme

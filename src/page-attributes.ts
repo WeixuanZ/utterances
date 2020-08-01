@@ -3,7 +3,7 @@ import repoRegex from './repo-regex';
 import { token } from './oauth';
 
 function readPageAttributes() {
-  const params = deparam(location.search.substr(1));
+  const params = deparam(location.search.substr(1));  // url parameters supplied by client.ts
 
   let issueTerm: string | null = null;
   let issueNumber: number | null = null;
@@ -17,7 +17,7 @@ function readPageAttributes() {
         if (!params[issueTerm]) {
           throw new Error(`Unable to find "${issueTerm}" metadata.`);
         }
-        issueTerm = params[issueTerm];
+        issueTerm = params[issueTerm];  // 'title', 'pathname' etc are parameters in param
       }
     }
   } else if ('issue-number' in params) {

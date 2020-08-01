@@ -199,13 +199,14 @@ export function loadUser(): Promise<User | null> {
     });
 }
 
+// ask utterances-oauth to create a new issue
 export function createIssue(issueTerm: string, documentUrl: string, title: string, description: string, label: string) {
   const url = `${UTTERANCES_API}/repos/${owner}/${repo}/issues${label ? `?label=${encodeURIComponent(label)}` : ''}`;
   const request = new Request(url, {
     method: 'POST',
     body: JSON.stringify({
       title: issueTerm,
-      body: `# ${title}\n\n${description}\n\n[${documentUrl}](${documentUrl})`
+      body: `# ${title}\n\n${description}\n\n[${documentUrl}](${documentUrl})`  // issue content
     })
   });
   request.headers.set('Accept', GITHUB_ENCODING__REACTIONS_PREVIEW);
