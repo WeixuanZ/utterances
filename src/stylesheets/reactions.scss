@@ -4,12 +4,9 @@
   margin-top: -1px;
   margin-bottom: -1px;
   margin-left: -1px;
-  border-right: $border;
   overflow-x: hidden;
   overflow-y: visible;
-  > .reaction-button:last-child {
-    border-right: none!important;
-  }
+  border-radius: $border-radius;
 }
 
 .reaction-list > .reaction-button {
